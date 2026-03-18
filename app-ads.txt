@@ -1,0 +1,7 @@
+# app-ads.txt for YenaLab apps
+# Replace pub-XXXXXXXXXXXXXXXX with your actual AdMob Publisher ID
+# Find it at: AdMob Console → 계정 → 계정 정보 → 게시자 ID
+#
+# Format: ad-system-domain, publisher-id, relationship, certification-authority-id
+
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
