@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>예나랩 (yenalab) — 초등 수학 퀴즈 앱</title>
-  <meta name="description" content="초등학생을 위한 손글씨 수학 퀴즈 앱 · yenalab" />
+  <meta name="description" content="초등학생을 위한 손글씨 수학 퀴즈 앱 · 예나랩" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;900&display=swap" rel="stylesheet" />
@@ -12,206 +12,449 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary: #6c63ff;
-      --primary-light: #ede9ff;
-      --accent: #ff7675;
-      --text: #2d3436;
-      --sub: #636e72;
-      --bg: #fafafa;
+      --ink: #19324a;
+      --ink-soft: #5f7386;
+      --paper: #fffaf1;
+      --paper-deep: #f5ecdc;
+      --sky: #d7ecff;
+      --mint: #dff5e8;
+      --peach: #ffd9c7;
+      --sun: #ffb84d;
+      --coral: #ef7b63;
+      --line: rgba(25, 50, 74, 0.08);
       --white: #ffffff;
-      --radius: 16px;
-      --shadow: 0 4px 24px rgba(108,99,255,.12);
+      --radius: 20px;
+      --shadow: 0 20px 60px rgba(25, 50, 74, 0.08);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Noto Sans KR', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(215,236,255,.9), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,217,199,.65), transparent 26%),
+        linear-gradient(180deg, #fffdf8 0%, var(--paper) 100%);
+      line-height: 1.65;
     }
 
-    /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #ececec;
+      background: rgba(255, 250, 241, .88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(25, 50, 74, .08);
     }
     .nav-inner {
-      max-width: 960px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 24px;
-      height: 60px;
+      height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .nav-logo { font-size: 20px; font-weight: 900; color: var(--primary); text-decoration: none; }
-    .nav-links { display: flex; gap: 24px; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--sub); font-size: 14px; font-weight: 600; transition: color .2s; }
-    .nav-links a:hover { color: var(--primary); }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 14px;
+      font-weight: 700;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--coral); }
 
-    /* ── HERO ── */
     .hero {
-      background: linear-gradient(135deg, #6c63ff 0%, #a29bfe 100%);
-      color: white;
-      text-align: center;
-      padding: 100px 24px 80px;
+      padding: 92px 24px 76px;
+    }
+    .hero-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: 32px;
+      align-items: center;
+    }
+    .hero-copy {
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(25, 50, 74, .06);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 42px;
     }
     .hero-badge {
-      display: inline-block;
-      background: rgba(255,255,255,.2);
-      border: 1px solid rgba(255,255,255,.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--coral);
+      border: 1px solid rgba(239, 123, 99, .18);
       border-radius: 999px;
-      padding: 4px 16px;
+      padding: 7px 16px;
       font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 24px;
+      font-weight: 800;
+      margin-bottom: 18px;
     }
-    .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 900; line-height: 1.3; margin-bottom: 16px; }
-    .hero p { font-size: 16px; opacity: .88; max-width: 520px; margin: 0 auto 36px; }
-    .btn-primary {
-      display: inline-block;
-      background: white;
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 15px;
-      padding: 14px 36px;
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      margin-bottom: 18px;
+    }
+    .hero p {
+      color: var(--ink-soft);
+      font-size: 17px;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
       border-radius: 999px;
+      font-size: 15px;
+      font-weight: 800;
       text-decoration: none;
-      box-shadow: 0 6px 24px rgba(0,0,0,.18);
-      transition: transform .2s, box-shadow .2s;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,.22); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--coral) 0%, #f49f52 100%);
+      color: var(--white);
+      box-shadow: 0 14px 30px rgba(239, 123, 99, .28);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--ink);
+      border: 1px solid rgba(25, 50, 74, .08);
+    }
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .metric {
+      background: var(--white);
+      border: 1px solid rgba(25, 50, 74, .06);
+      border-radius: 16px;
+      padding: 14px 16px;
+      min-width: 140px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .metric span {
+      font-size: 13px;
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+    .hero-panel {
+      position: relative;
+      background: linear-gradient(180deg, #fffefb 0%, #fff3e4 100%);
+      border: 1px solid rgba(25, 50, 74, .06);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      overflow: hidden;
+    }
+    .hero-panel::before,
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(12px);
+    }
+    .hero-panel::before {
+      width: 160px;
+      height: 160px;
+      background: rgba(215,236,255,.8);
+      top: -46px;
+      right: -28px;
+    }
+    .hero-panel::after {
+      width: 120px;
+      height: 120px;
+      background: rgba(255,217,199,.8);
+      bottom: -34px;
+      left: -22px;
+    }
+    .panel-card {
+      position: relative;
+      background: var(--white);
+      border-radius: 22px;
+      padding: 22px;
+      border: 1px solid rgba(25, 50, 74, .06);
+      margin-bottom: 16px;
+    }
+    .panel-card:last-child { margin-bottom: 0; }
+    .panel-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--coral);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .panel-main {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .panel-sub {
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+    .difficulty-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .difficulty-chip {
+      background: #fff8ef;
+      border: 1px solid rgba(25, 50, 74, .06);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink);
+      text-align: center;
+    }
 
-    /* ── SECTION COMMON ── */
     section { padding: 80px 24px; }
-    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
     .section-tag {
       display: inline-block;
-      background: var(--primary-light);
-      color: var(--primary);
+      background: rgba(239, 123, 99, .12);
+      color: var(--coral);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .08em;
       text-transform: uppercase;
-      padding: 4px 12px;
+      padding: 6px 12px;
       border-radius: 999px;
       margin-bottom: 12px;
     }
-    h2 { font-size: clamp(22px, 4vw, 32px); font-weight: 900; margin-bottom: 8px; }
-    .lead { color: var(--sub); font-size: 15px; margin-bottom: 48px; }
+    h2 {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 900;
+      letter-spacing: -.03em;
+      margin-bottom: 10px;
+    }
+    .lead {
+      color: var(--ink-soft);
+      font-size: 15px;
+      margin-bottom: 42px;
+      max-width: 720px;
+    }
 
-    /* ── FEATURES ── */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+      gap: 18px;
     }
     .feature-card {
-      background: var(--white);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(25, 50, 74, .06);
       border-radius: var(--radius);
-      padding: 28px 24px;
+      padding: 24px;
       box-shadow: var(--shadow);
     }
-    .feature-icon { font-size: 36px; margin-bottom: 14px; }
-    .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .feature-card p { font-size: 14px; color: var(--sub); }
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, var(--sky) 0%, #fff 100%);
+    }
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
 
-    /* ── PRIVACY ── */
-    #privacy { background: var(--white); }
-    .privacy-box {
-      background: var(--bg);
-      border: 1px solid #e0e0e0;
-      border-radius: var(--radius);
-      padding: 36px;
+    #privacy { background: rgba(255,255,255,.55); }
+    .privacy-box,
+    .support-card {
+      background: var(--white);
+      border: 1px solid rgba(25, 50, 74, .06);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: var(--shadow);
     }
     .privacy-box h3 {
       font-size: 17px;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 28px 0 10px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 24px 0 10px;
     }
     .privacy-box h3:first-child { margin-top: 0; }
-    .privacy-box p, .privacy-box li { font-size: 14px; color: #444; line-height: 1.8; }
+    .privacy-box p,
+    .privacy-box li {
+      font-size: 14px;
+      color: #425466;
+      line-height: 1.85;
+    }
     .privacy-box ul { padding-left: 20px; }
     .privacy-box ul li { margin-bottom: 6px; }
     .privacy-effective {
       margin-top: 28px;
-      padding-top: 20px;
-      border-top: 1px solid #e0e0e0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(25, 50, 74, .08);
       font-size: 13px;
-      color: var(--sub);
+      color: var(--ink-soft);
     }
 
-    /* ── SUPPORT ── */
-    #support { background: var(--primary-light); }
-    .support-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 36px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    #support {
+      background: linear-gradient(180deg, rgba(223,245,232,.7) 0%, rgba(255,250,241,0) 100%);
     }
-    .support-item { display: flex; align-items: flex-start; gap: 16px; }
+    .support-card {
+      display: grid;
+      gap: 18px;
+    }
+    .support-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffdf8 0%, #fff8ef 100%);
+      border: 1px solid rgba(25, 50, 74, .05);
+    }
     .support-icon {
-      width: 44px; height: 44px;
-      background: var(--primary-light);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
       font-size: 20px;
       flex-shrink: 0;
     }
-    .support-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-    .support-item p { font-size: 14px; color: var(--sub); }
-    .support-item a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .support-item h4 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .support-item p {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+    .support-item a {
+      color: var(--coral);
+      text-decoration: none;
+      font-weight: 700;
+    }
     .support-item a:hover { text-decoration: underline; }
 
-    /* ── FOOTER ── */
     footer {
-      background: #2d3436;
-      color: #b2bec3;
+      background: #17304a;
+      color: rgba(255,255,255,.72);
       padding: 48px 24px;
       font-size: 13px;
+      margin-top: 32px;
     }
     .footer-inner {
-      max-width: 960px;
+      max-width: 1080px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       gap: 32px;
       justify-content: space-between;
     }
-    .footer-brand .logo { font-size: 20px; font-weight: 900; color: white; margin-bottom: 8px; }
+    .footer-brand .logo {
+      font-size: 20px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 10px;
+    }
     .footer-brand p { max-width: 280px; line-height: 1.7; }
-    .footer-info h4 { color: white; font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+    .footer-info h4 {
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
     .footer-info p { margin-bottom: 6px; }
-    .footer-info a { color: #a29bfe; text-decoration: none; }
+    .footer-info a {
+      color: #ffd18b;
+      text-decoration: none;
+    }
     .footer-info a:hover { text-decoration: underline; }
     .footer-bottom {
-      max-width: 960px;
+      max-width: 1080px;
       margin: 32px auto 0;
       padding-top: 20px;
-      border-top: 1px solid #3d3d3d;
+      border-top: 1px solid rgba(255,255,255,.12);
       text-align: center;
       font-size: 12px;
     }
 
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-copy { padding: 34px 28px; }
+      .hero-panel { padding: 22px; }
+    }
+
     @media (max-width: 600px) {
-      .nav-links { gap: 14px; }
-      .privacy-box { padding: 24px 18px; }
+      .nav-inner { height: auto; padding-top: 14px; padding-bottom: 14px; flex-direction: column; gap: 10px; }
+      .nav-links { gap: 16px; }
+      .hero { padding-top: 56px; }
+      .hero-copy,
+      .hero-panel,
+      .privacy-box,
+      .support-card { padding: 22px 18px; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { width: 100%; }
+      .difficulty-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#">✏️ 예나랩</a>
@@ -223,178 +466,189 @@
   </div>
 </nav>
 
-<!-- ── HERO ── -->
 <section class="hero">
-  <div class="hero-badge">🇰🇷 Korean Elementary Math</div>
-  <h1>손으로 쓰며 배우는<br>초등 수학 퀴즈</h1>
-  <p>2022 개정 교육과정 기반 1~6학년 전 단원 · Google ML Kit 손글씨 인식 · 오프라인 완전 동작</p>
-  <a href="https://play.google.com/store/apps/details?id=com.honaapp.math_quiz_app" class="btn-primary">
-    Google Play에서 다운로드
-  </a>
-</section>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-badge">초등 1~6학년 손글씨 수학 앱</div>
+      <h1>손으로 쓰고,<br>AI와 함께 푸는 초등 수학</h1>
+      <p>2022 개정 교육과정 전 단원을 학년별로 제공하고, 손글씨 인식 채점과 AI 문장제, 오답노트, 학습 기록을 한 앱에 담았습니다.</p>
+      <div class="hero-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.honaapp.math_quiz_app" class="btn-primary">Google Play에서 다운로드</a>
+        <a href="#privacy" class="btn-secondary">개인정보 처리방침 보기</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <strong>1~6학년</strong>
+          <span>1학기 · 2학기 · 종합평가</span>
+        </div>
+        <div class="metric">
+          <strong>4단계</strong>
+          <span>쉬워요부터 매우 어려워요까지</span>
+        </div>
+        <div class="metric">
+          <strong>Offline-first</strong>
+          <span>로컬 저장 후 온라인 복구</span>
+        </div>
+      </div>
+    </div>
 
-<!-- ── FEATURES ── -->
-<section id="features">
-  <div class="section-inner">
-    <span class="section-tag">Features</span>
-    <h2>주요 기능</h2>
-    <p class="lead">종이에 연필로 쓰는 듯한 경험으로 수학 실력을 키워요</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">✍️</div>
-        <h3>손글씨 인식 채점</h3>
-        <p>화면에 직접 손으로 답을 쓰면 Google ML Kit이 실시간으로 인식해 자동 채점합니다.</p>
+    <div class="hero-panel">
+      <div class="panel-card">
+        <div class="panel-title">현재 앱 상태</div>
+        <div class="panel-main">회원가입 기반 학습 기록 복구</div>
+        <div class="panel-sub">아이디 + 비밀번호 + 보호자 이메일로 로그인하고, 학습 기록과 오답노트를 Firebase와 동기화합니다.</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📚</div>
-        <h3>전 학년 교육과정</h3>
-        <p>1~6학년 1학기·2학기·종합평가 탭으로 구성된 2022 개정 교육과정 문제를 제공합니다.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⭐</div>
-        <h3>4단계 난이도</h3>
-        <p>쉬워요 → 보통 → 어려워요 → 천재급까지 실력에 따라 단계를 해금하며 도전할 수 있습니다.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <h3>AI 문장제 (Crazy 모드)</h3>
-        <p>Gemini AI가 아이 이름을 주인공으로 한 창의적인 수학 문장제 문제를 생성합니다.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>학습 기록</h3>
-        <p>달력과 히트맵으로 학습 이력을 시각화하고, 세션별 문제 결과를 상세히 확인할 수 있습니다.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📵</div>
-        <h3>오프라인 우선</h3>
-        <p>인터넷 없이도 완전히 동작합니다. 온라인 복귀 시 데이터가 자동으로 동기화됩니다.</p>
+      <div class="panel-card">
+        <div class="panel-title">난이도</div>
+        <div class="panel-sub">현재는 난이도 해금 없이 원하는 단계로 바로 선택할 수 있습니다.</div>
+        <div class="difficulty-row">
+          <div class="difficulty-chip">😊 쉬워요</div>
+          <div class="difficulty-chip">🤔 보통이에요</div>
+          <div class="difficulty-chip">😤 어려워요</div>
+          <div class="difficulty-chip">🤯 매우 어려워요</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PRIVACY ── -->
+<section id="features">
+  <div class="section-inner">
+    <span class="section-tag">Features</span>
+    <h2>주요 기능</h2>
+    <p class="lead">현재 앱에 실제로 들어가 있는 기능 기준으로 정리했습니다.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✍️</div>
+        <h3>손글씨 인식 채점</h3>
+        <p>화면에 직접 손으로 답을 쓰면 Google ML Kit이 숫자와 기호를 인식해 자동 채점합니다.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>전 학년 교육과정</h3>
+        <p>1~6학년, 1학기·2학기·종합평가 구조로 단원을 탐색하고 문제를 풀 수 있습니다.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤯</div>
+        <h3>AI 문장제</h3>
+        <p>매우 어려워요 난이도에서는 Gemini가 아이 이름을 넣은 창의적인 문장제 문제를 생성합니다.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📕</div>
+        <h3>오답노트</h3>
+        <p>틀린 문제를 자동 저장하고, 학년별로 다시 풀면서 정답 처리 시 기록을 정리할 수 있습니다.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>학습 기록</h3>
+        <p>세션 결과를 로컬 DB에 저장하고 달력 기반으로 학습 이력을 확인할 수 있습니다.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖍️</div>
+        <h3>젤리와 펜 상점</h3>
+        <p>높은 정답률로 젤리를 얻고, 여러 색 펜을 구매해 필기 캔버스에 바로 적용할 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="privacy">
   <div class="section-inner">
     <span class="section-tag">Privacy Policy</span>
     <h2>개인정보 처리방침</h2>
-    <p class="lead">Google Play Families Policy 및 COPPA 준수 방침</p>
+    <p class="lead">현재 앱의 로그인·동기화 구조를 반영한 최신 안내입니다.</p>
     <div class="privacy-box">
+      <h3>1. 개요</h3>
+      <p>예나랩(yenalab)이 제공하는 초등 수학 퀴즈 앱은 아동 학습을 돕는 서비스입니다. 당사는 아동의 개인정보 보호를 중요하게 여기며, 관련 법령과 플랫폼 정책을 준수하기 위해 필요한 범위 내에서만 정보를 처리합니다.</p>
 
-      <h3>1. 개요 (Overview)</h3>
-      <p>
-        예나랩(yenalab)이 제공하는 <strong>초등 산수 필기 퀴즈</strong> 앱(이하 "본 앱")은
-        초등학생을 주요 사용자로 합니다. 당사는 아동의 개인정보 보호를 최우선으로 하며,
-        Google Play Families Policy, 아동 온라인 개인정보 보호법(COPPA),
-        개인정보 보호법(대한민국) 등 관련 법령을 준수합니다.
-      </p>
-
-      <h3>2. 수집하는 정보 (Information We Collect)</h3>
-      <p>본 앱은 아동의 개인식별 정보를 수집하지 않습니다. 구체적으로:</p>
+      <h3>2. 수집하는 정보</h3>
+      <p>본 앱은 서비스 제공과 계정 복구를 위해 다음 정보를 수집하거나 저장합니다.</p>
       <ul>
-        <li>이름, 이메일, 전화번호, 주소 등 개인식별 정보 — <strong>수집 안 함</strong></li>
-        <li>사진, 연락처, 위치 정보 — <strong>수집 안 함</strong></li>
-        <li>기기 내 다른 앱 정보 — <strong>수집 안 함</strong></li>
+        <li>사용자가 입력한 아이디</li>
+        <li>보호자 이메일 주소</li>
+        <li>사용자가 입력한 닉네임</li>
+        <li>학년 정보</li>
+        <li>학습 기록, 퀴즈 결과, 오답노트, 젤리 수, 구매한 펜 목록</li>
+        <li>Firebase 인증에 의해 생성되는 계정 식별자(UID)</li>
       </ul>
-      <p style="margin-top:12px;">앱 동작을 위해 다음 정보만 기기 내에 저장됩니다:</p>
+      <p style="margin-top:12px;">다음 정보는 수집하지 않습니다.</p>
       <ul>
-        <li>사용자가 직접 입력한 닉네임(아이 이름) — 기기 및 Firebase에 저장, 외부 제3자에게 제공 안 함</li>
-        <li>학습 기록(맞은 문제 수, 오답 내용) — 기기 로컬 DB 및 Firebase에 저장</li>
-        <li>젤리 수, 구매한 펜 목록 — 기기 로컬 DB 및 Firebase에 저장</li>
-        <li>익명 기기 식별자(Firebase Anonymous Auth UID) — 계정 연동 없이 자동 생성</li>
+        <li>연락처, 기기 주소록, 위치 정보</li>
+        <li>사진첩, 마이크, 카메라 기반 개인 콘텐츠</li>
+        <li>행동 기반 광고를 위한 관심사 프로파일링 정보</li>
       </ul>
 
-      <h3>3. 광고 정책 (Advertising Policy)</h3>
-      <p>
-        본 앱은 Google AdMob을 통해 광고를 표시합니다.
-        본 앱은 <strong>아동 대상 앱(Designed for Families)</strong>으로 설정되어 있으며,
-        Google AdMob의 아동용 광고 정책(Child-Directed Treatment)을 따릅니다:
-      </p>
+      <h3>3. 이용 목적</h3>
       <ul>
-        <li>행동 기반 타겟 광고(Behavioral Advertising) — <strong>비활성화</strong></li>
-        <li>관심사 기반 광고(Interest-based Ads) — <strong>비활성화</strong></li>
-        <li>COPPA 아동용 설정(<code>tagForChildDirectedTreatment: true</code>) — <strong>적용</strong></li>
-        <li>광고 SDK가 아동 개인정보를 수집하거나 제3자와 공유하지 않도록 설정됨</li>
+        <li>회원가입, 로그인, 비밀번호 찾기 지원</li>
+        <li>재설치 후 학습 데이터 복구</li>
+        <li>닉네임 기반 AI 문제 개인화</li>
+        <li>오답노트, 학습 기록, 젤리 및 펜 구매 상태 저장</li>
       </ul>
 
-      <h3>4. 제3자 서비스 (Third-Party Services)</h3>
+      <h3>4. 광고 및 제3자 서비스</h3>
       <ul>
-        <li><strong>Firebase (Google LLC)</strong> — 익명 인증, 데이터 동기화 (아동 개인정보 처리 없음)</li>
-        <li><strong>Google AdMob</strong> — 광고 제공 (아동용 정책 적용)</li>
-        <li><strong>Google ML Kit</strong> — 온디바이스 손글씨 인식 (데이터 외부 전송 없음)</li>
-        <li><strong>Google Gemini AI</strong> — Crazy 모드 문제 생성 (닉네임만 프롬프트에 포함, 개인식별 불가)</li>
+        <li><strong>Firebase Authentication / Cloud Firestore</strong>: 계정 인증 및 학습 데이터 동기화</li>
+        <li><strong>Google AdMob</strong>: 광고 제공</li>
+        <li><strong>Google ML Kit</strong>: 손글씨 인식</li>
+        <li><strong>Google Gemini API</strong>: 매우 어려워요 난이도의 AI 문제 생성</li>
       </ul>
+      <p>광고와 외부 서비스는 각 서비스 제공자의 정책에 따라 운영될 수 있습니다.</p>
 
-      <h3>5. 데이터 보관 및 삭제 (Data Retention &amp; Deletion)</h3>
-      <p>
-        앱을 삭제하면 기기 내 모든 데이터가 삭제됩니다.
-        Firebase에 저장된 데이터 삭제를 원하시면 아래 지원 이메일로 요청해 주세요.
-        요청 접수 후 30일 이내에 삭제됩니다.
-      </p>
+      <h3>5. 데이터 보관 및 삭제</h3>
+      <p>학습 기록과 계정 정보는 서비스 운영과 복구를 위해 Firebase 및 기기 로컬 저장소에 보관됩니다. 앱 내 회원 탈퇴 기능을 통해 계정을 삭제할 수 있으며, 추가 삭제 요청은 지원 이메일로 접수할 수 있습니다.</p>
 
-      <h3>6. 보호자 권리 (Parental Rights)</h3>
-      <p>보호자는 다음 권리를 행사할 수 있습니다:</p>
-      <ul>
-        <li>자녀의 데이터 열람·삭제 요청</li>
-        <li>데이터 수집·처리에 대한 동의 철회</li>
-      </ul>
-      <p>요청은 아래 이메일로 보내주세요.</p>
+      <h3>6. 보호자 권리</h3>
+      <p>보호자는 자녀 계정과 관련하여 데이터 삭제나 처리 문의를 요청할 수 있습니다. 문의는 아래 이메일로 접수해 주세요.</p>
 
-      <h3>7. 방침 변경 (Changes to This Policy)</h3>
-      <p>
-        본 방침이 변경될 경우 이 페이지에 게시하여 알립니다.
-        중요한 변경 사항은 앱 업데이트 노트에도 포함됩니다.
-      </p>
+      <h3>7. 문의</h3>
+      <p>개인정보와 관련한 문의는 <a href="mailto:yenalabs@gmail.com">yenalabs@gmail.com</a> 으로 보내주시면 확인 후 답변드립니다.</p>
 
       <div class="privacy-effective">
-        시행일: 2026년 3월 18일 &nbsp;|&nbsp;
+        최종 업데이트: 2026년 3월 26일 &nbsp;|&nbsp;
         문의: <a href="mailto:yenalabs@gmail.com">yenalabs@gmail.com</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── SUPPORT ── -->
 <section id="support">
   <div class="section-inner">
     <span class="section-tag">Support</span>
     <h2>지원 및 문의</h2>
-    <p class="lead">궁금한 점이 있거나 불편한 점을 발견하셨나요? 편하게 연락 주세요.</p>
+    <p class="lead">앱 사용 중 문제를 발견했거나 데이터 관련 문의가 있으면 아래 채널로 연락 주세요.</p>
     <div class="support-card">
       <div class="support-item">
         <div class="support-icon">✉️</div>
         <div>
           <h4>이메일 문의</h4>
-          <p>버그 리포트, 기능 제안, 데이터 삭제 요청 등 모든 문의를 받습니다.<br>
+          <p>버그 제보, 기능 제안, 계정 및 데이터 삭제 요청 등 일반 문의를 받습니다.<br>
           <a href="mailto:yenalabs@gmail.com">yenalabs@gmail.com</a></p>
         </div>
       </div>
       <div class="support-item">
-        <div class="support-icon">🐛</div>
+        <div class="support-icon">🧾</div>
         <div>
-          <h4>버그 신고 / 기능 요청</h4>
-          <p>GitHub Issues를 통해 버그를 신고하거나 기능을 제안할 수 있습니다.<br>
-          <a href="https://github.com/hello-hona/math-quiz-support/issues" target="_blank" rel="noopener">github.com/hello-hona/math-quiz-support/issues</a></p>
+          <h4>문의 시 포함하면 좋은 정보</h4>
+          <p>앱 버전, 사용 기기, 문제 발생 화면, 재현 순서를 함께 보내주시면 확인이 빨라집니다.</p>
         </div>
       </div>
       <div class="support-item">
         <div class="support-icon">⏱️</div>
         <div>
           <h4>응답 시간</h4>
-          <p>이메일 문의는 영업일 기준 3일 이내에 답변드립니다.</p>
+          <p>이메일 문의는 영업일 기준 3일 이내 답변을 목표로 합니다.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">✏️ yenalab(예나랩)</div>
-      <p>초등학생을 위한 손글씨 수학 퀴즈 앱을 만듭니다.</p>
+      <p>초등학생이 손으로 쓰며 배우는 수학 앱을 만듭니다.</p>
     </div>
     <div class="footer-info">
       <h4>사업자 정보</h4>
@@ -405,8 +659,8 @@
     </div>
     <div class="footer-info">
       <h4>바로가기</h4>
+      <p><a href="#features">주요 기능</a></p>
       <p><a href="#privacy">개인정보 처리방침</a></p>
-      <p><a href="#support">고객 지원</a></p>
       <p><a href="https://play.google.com/store/apps/details?id=com.honaapp.math_quiz_app" target="_blank" rel="noopener">Google Play</a></p>
     </div>
   </div>
