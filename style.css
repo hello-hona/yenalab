@@ -73,6 +73,15 @@ nav {
 .hero {
   padding: 92px 24px 76px;
 }
+.subpage-hero {
+  padding: 92px 24px 24px;
+}
+.subpage-body {
+  padding: 24px 24px 80px;
+}
+.narrow {
+  max-width: 860px;
+}
 .hero-inner {
   max-width: 1080px;
   margin: 0 auto;
@@ -346,6 +355,14 @@ h2 {
 }
 .privacy-box ul { padding-left: 20px; }
 .privacy-box ul li { margin-bottom: 6px; }
+.policy-steps {
+  padding-left: 22px;
+  color: #5d7080;
+}
+.policy-steps li {
+  margin-bottom: 8px;
+  line-height: 1.85;
+}
 .privacy-effective {
   margin-top: 28px;
   padding-top: 18px;
