@@ -181,7 +181,8 @@ a {
   border: 1px solid rgba(55, 64, 86, 0.12);
 }
 
-.note-chip {
+.note-chip,
+.chip {
   border-radius: 999px;
   background: #f4f6fb;
   color: #5c657e;
@@ -280,6 +281,7 @@ a {
   font: inherit;
   font-weight: 800;
   cursor: pointer;
+  transition: transform 0.18s ease;
 }
 
 .filter-pill.is-active {
@@ -319,6 +321,10 @@ a {
   padding: 24px;
 }
 
+.info-card {
+  padding: 24px;
+}
+
 .app-card-top {
   display: flex;
   align-items: center;
@@ -347,7 +353,7 @@ a {
   color: #3667b4;
 }
 
-.app-status {
+.app-status-live {
   background: #e8f7ec;
   color: #2f8b4d;
 }
@@ -367,6 +373,13 @@ a {
 .app-card h3 {
   font-family: 'Jua', sans-serif;
   font-size: 2rem;
+}
+
+.info-card h3,
+.policy-column h3,
+.policy-card h3 {
+  font-family: 'Jua', sans-serif;
+  font-size: 1.35rem;
 }
 
 .app-tagline {
