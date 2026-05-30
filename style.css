@@ -353,6 +353,11 @@ a {
   color: #3667b4;
 }
 
+.category-web {
+  background: #edf7ed;
+  color: #2e7d32;
+}
+
 .app-status-live {
   background: #e8f7ec;
   color: #2f8b4d;
