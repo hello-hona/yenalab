@@ -1,109 +1,42 @@
 /* =========================================================
-   Yenalab Design System — Colors & Type
-   Sources: hello-hona/yenalab (style.css, index.html, app pages)
+   Yenalab Design Tokens — Minimal (white / black)
    ========================================================= */
 
-/* Webfonts (loaded via Google Fonts in product) */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
 
 :root {
-  /* ---------- Brand palette ---------- */
-  /* Warm coral / clay — primary brand accent (CTA, hover, emphasis) */
-  --brand-coral-50:  #fff1de;
-  --brand-coral-100: #fff0df;
-  --brand-coral-200: #ffe2c9;
-  --brand-coral-400: #ef8d59;
-  --brand-coral-500: #dd6b4d;
-  --brand-coral-600: #d46548;
-  --brand-coral-700: #c75d3c;
-  --brand-coral-800: #bf633d;
-  --brand-pink-500:  #e86a76; /* secondary accent paired in primary CTA gradient */
+  /* ---------- Palette ---------- */
+  --white:    #ffffff;
+  --gray-50:  #fafafa;
+  --gray-100: #f4f4f4;
+  --gray-200: #e5e5e5;
+  --gray-400: #9b9b9b;
+  --gray-600: #555555;
+  --black:    #111111;
 
-  /* Cool blue — puzzle category & support tints */
-  --brand-blue-50:   #e9f2ff;
-  --brand-blue-100:  #c3e5ff;
-  --brand-blue-500:  #3667b4;
-
-  /* Soft violet — "pre-release" status pill */
-  --brand-violet-50: #f4f2ff;
-  --brand-violet-500: #6c63b6;
-
-  /* Green — "operating" status pill */
-  --brand-green-50:  #e8f7ec;
-  --brand-green-500: #2f8b4d;
-
-  /* ---------- Neutrals (warm) ---------- */
-  --bg-cream-0:   #fffaf5;   /* page top */
-  --bg-cream-1:   #f9f5ef;   /* page bottom */
-  --bg-cream-2:   #fff9f3;
-  --bg-cream-3:   #fff9f1;
-  --surface-0:    #ffffff;
-  --surface-1:    rgba(255, 255, 255, 0.82); /* glass card */
-  --surface-2:    rgba(255, 255, 255, 0.72);
-  --surface-nav:  rgba(255, 250, 245, 0.82);
-
-  --ink-900:      #1e2636;   /* footer dark */
-  --ink-800:      #293145;
-  --ink-700:      #2e3446;   /* body text */
-  --ink-600:      #2f3850;   /* active pill */
-  --ink-500:      #374056;
-  --ink-400:      #42506d;
-  --ink-300:      #5f6981;
-  --ink-200:      #687087;
-  --ink-100:      #6d758d;
-
-  --hairline:     rgba(46, 52, 70, 0.08);
-  --hairline-strong: rgba(46, 52, 70, 0.12);
-  --on-dark-soft: rgba(255, 255, 255, 0.74);
-  --on-dark-hair: rgba(255, 255, 255, 0.12);
+  --green-500: #16a34a; /* status dot (운영 중) */
 
   /* ---------- Semantic tokens ---------- */
-  --fg-1: var(--ink-700);    /* primary text */
-  --fg-2: var(--ink-200);    /* secondary text */
-  --fg-3: var(--ink-100);    /* muted text */
-  --fg-link: var(--ink-400);
-  --fg-link-hover: var(--brand-coral-500);
-  --fg-on-brand: #fffdf9;
+  --fg-1: var(--black);      /* primary text */
+  --fg-2: var(--gray-600);   /* secondary text */
+  --fg-3: var(--gray-400);   /* muted text */
+  --fg-link: var(--black);
+  --fg-on-brand: var(--white);
 
-  --bg-page: var(--bg-cream-1);
-  --bg-card: var(--surface-1);
-  --bg-eyebrow: var(--brand-coral-50);
-  --bg-chip: #f4f6fb;
+  --bg-page: var(--white);
+  --bg-card: var(--white);
+  --bg-subtle: var(--gray-50);
 
-  --border-card: var(--hairline);
-  --border-strong: var(--hairline-strong);
-
-  --status-live-bg: var(--brand-green-50);
-  --status-live-fg: var(--brand-green-500);
-  --status-soft-bg: var(--brand-violet-50);
-  --status-soft-fg: var(--brand-violet-500);
-  --tag-learning-bg: var(--brand-coral-100);
-  --tag-learning-fg: var(--brand-coral-800);
-  --tag-puzzle-bg:   var(--brand-blue-50);
-  --tag-puzzle-fg:   var(--brand-blue-500);
-
-  /* ---------- Background washes ---------- */
-  --bg-page-radial:
-    radial-gradient(circle at top left, rgba(255, 205, 165, 0.42), transparent 28%),
-    radial-gradient(circle at top right, rgba(195, 229, 255, 0.48), transparent 26%),
-    linear-gradient(180deg, var(--bg-cream-0) 0%, var(--bg-cream-1) 100%);
-  --bg-policy-wash: linear-gradient(180deg, rgba(255, 244, 228, 0.65) 0%, rgba(249, 245, 239, 0) 100%);
-  --bg-support-wash: linear-gradient(180deg, rgba(231, 242, 255, 0.55) 0%, rgba(249, 245, 239, 0) 100%);
-  --bg-footer: linear-gradient(135deg, var(--ink-800) 0%, var(--ink-900) 100%);
-
-  /* ---------- Gradients ---------- */
-  --grad-primary: linear-gradient(135deg, var(--brand-coral-400) 0%, var(--brand-pink-500) 100%);
-  --grad-mini-tile: linear-gradient(180deg, var(--bg-cream-3) 0%, #fffefc 100%);
+  --border-card: var(--gray-200);
+  --border-strong: var(--black);
 
   /* ---------- Shadows ---------- */
-  --shadow-card: 0 24px 60px rgba(46, 52, 70, 0.08);
-  --shadow-cta:  0 16px 32px rgba(232, 106, 118, 0.28);
+  --shadow-card: none;
 
   /* ---------- Radii ---------- */
-  --radius-pill:   999px;
-  --radius-card:   28px;
-  --radius-hero:   32px;
-  --radius-tile:   18px;
+  --radius-pill: 999px;
+  --radius-card: 12px;
+  --radius-btn:  8px;
 
   /* ---------- Spacing scale ---------- */
   --space-1:  4px;
@@ -124,38 +57,23 @@
   --container-narrow: 860px;
   --container-gutter: 48px;
 
-  /* ---------- Motion ---------- */
-  --ease-pop: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --transition-btn: transform 0.18s ease, box-shadow 0.18s ease;
-  --hover-lift: translateY(-2px);
-
   /* ---------- Typography ---------- */
-  --font-display: 'Jua', 'Noto Sans KR', sans-serif;       /* big titles, brand wordmarks, big numerals */
-  --font-body:    'Noto Sans KR', system-ui, sans-serif;  /* paragraphs, UI, buttons */
+  --font-body: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
 
-  /* Type scale (matches product clamp() heads) */
-  --fs-h1: clamp(2.4rem, 5vw, 4.4rem);
-  --fs-h2: clamp(2rem, 3vw, 3rem);
-  --fs-h3: 2rem;
-  --fs-card-strong: 1.35rem;
-  --fs-mini-strong: 1.6rem;
-  --fs-nav-logo: 1.65rem;
-  --fs-footer-brand: 1.4rem;
+  --fs-h1: clamp(2rem, 4.5vw, 3.2rem);
+  --fs-h2: clamp(1.5rem, 2.6vw, 2.1rem);
+  --fs-h3: 1.25rem;
   --fs-body: 1rem;
   --fs-sm: 0.95rem;
-  --fs-xs: 0.88rem;
-  --fs-eyebrow: 0.78rem;
+  --fs-xs: 0.85rem;
+  --fs-eyebrow: 0.75rem;
   --lh-body: 1.7;
-  --lh-tight: 1.08;
+  --lh-tight: 1.25;
 
-  /* Weights */
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
-  --fw-extrabold: 800;
-  --fw-black: 900;
 
-  --letter-eyebrow: 0.08em;
-  --letter-display: -0.03em;
-  --letter-logo: -0.02em;
+  --letter-eyebrow: 0.1em;
+  --letter-display: -0.01em;
 }
