@@ -6,8 +6,11 @@
   <title>Sem OneStep | yenalab</title>
   <meta
     name="description"
-    content="Introduction and policy guide for Sem OneStep, an elementary math app for writing and solving by hand."
+    content="Sem OneStep is an Android math app for Korean elementary grades 1–6. Choose a unit, solve by hand, and review your learning."
   />
+  <meta property="og:title" content="Sem OneStep | Learn math by writing" />
+  <meta property="og:description" content="Choose grade-level math problems, solve them by hand, and review missed questions." />
+  <meta property="og:image" content="https://yenalab.com/assets/sem-onestep/app-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -17,72 +20,136 @@
   <link rel="alternate" hreflang="en" href="https://yenalab.com/en/sem-onestep.html" />
   <link rel="alternate" hreflang="x-default" href="https://yenalab.com/sem-onestep.html" />
 </head>
-<body>
+<body class="sem-page">
   <nav class="site-nav">
     <div class="nav-inner">
       <a class="nav-logo" href="index.html">yenalab</a>
       <ul class="nav-links">
-        <li><a href="index.html#apps">Apps</a></li>
-        <li><a href="index.html#support">Contact</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screenshots">Screens</a></li>
+        <li><a href="#support">Contact</a></li>
         <li><a class="nav-lang" href="../sem-onestep.html" hreflang="ko" lang="ko">🇰🇷 KO</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero hero-app theme-learning">
-    <div class="hero-inner">
+  <header class="hero sem-hero">
+    <div class="hero-inner sem-hero-inner">
       <div class="hero-copy">
-        <div class="eyebrow">Learning App</div>
+        <img class="sem-app-icon" src="../assets/sem-onestep/app-icon.png" alt="Sem OneStep app icon" width="72" height="72" />
+        <div class="eyebrow">Korean elementary grades 1–6 · Android</div>
         <h1>Sem OneStep</h1>
-        <p>
-          A math learning app for elementary grades 1–6 featuring handwriting
-          recognition grading, reasoning word problems, a review notebook, learning
-          records, and account-based data recovery.
-        </p>
+        <p class="sem-headline">Learn math one handwritten step at a time.</p>
+        <p>Choose a grade and unit, then work through each problem on a paper-like canvas. Write your answer for handwriting recognition and revisit missed questions in the review notebook.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.honaapp.math_quiz_app" target="_blank" rel="noopener">Google Play</a>
-          <a class="btn btn-secondary" href="sem-onestep-privacy.html">Privacy Policy</a>
-          <a class="btn btn-secondary" href="sem-onestep-terms.html">Terms of Service</a>
-          <a class="btn btn-secondary" href="account-deletion.html">Account deletion</a>
+          <a class="btn btn-primary sem-primary-btn" href="https://play.google.com/store/apps/details?id=com.honaapp.math_quiz_app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a>
+          <a class="btn btn-secondary" href="#how-it-works">How it works</a>
         </div>
+        <p class="sem-availability">Available on Android. App content is in Korean.</p>
       </div>
-      <div class="hero-aside">
-        <div class="glass-card stack-card">
-          <span class="card-kicker">Core structure</span>
-          <strong>Sign-up + Firebase sync + learning record recovery</strong>
-          <p>Guardian email verification, App Check, rewarded ads, and a local-first storage flow are operated together.</p>
-        </div>
-      </div>
+      <figure class="sem-hero-visual">
+        <img src="../assets/sem-onestep/01.png" alt="Sem OneStep screen for choosing one of six grades" width="1080" height="1920" fetchpriority="high" />
+      </figure>
     </div>
   </header>
 
   <main>
-    <section id="features" class="section">
+    <section id="how-it-works" class="section sem-flow">
+      <div class="section-inner">
+        <div class="section-heading compact">
+          <div>
+            <div class="eyebrow">How it works</div>
+            <h2>Choose, write, and try again</h2>
+          </div>
+        </div>
+        <div class="sem-step-grid">
+          <article class="sem-step">
+            <span class="sem-step-number">01</span>
+            <h3>Choose a unit</h3>
+            <p>Pick a semester unit or comprehensive review for grades 1–6, then choose a difficulty level.</p>
+          </article>
+          <article class="sem-step">
+            <span class="sem-step-number">02</span>
+            <h3>Work it out by hand</h3>
+            <p>Use the scratch space for your working, then write your answer. A number keypad is available when handwriting recognition is difficult.</p>
+          </article>
+          <article class="sem-step">
+            <span class="sem-step-number">03</span>
+            <h3>Review and retry</h3>
+            <p>Revisit missed questions in the review notebook and check your practice days in the calendar and learning history.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section sem-features">
       <div class="section-inner">
         <div class="section-heading compact">
           <div>
             <div class="eyebrow">Features</div>
-            <h2>Key features</h2>
+            <h2>Made for everyday math practice</h2>
           </div>
         </div>
         <div class="feature-grid">
           <article class="info-card">
-            <h3>Handwriting recognition grading</h3>
-            <p>Digit and symbol recognition powered by Google ML Kit lets students solve problems by writing directly.</p>
+            <span class="sem-feature-icon" aria-hidden="true">✍️</span>
+            <h3>Handwriting recognition</h3>
+            <p>Write digits and symbols in the answer box. You can select a recognition candidate or use the number keypad.</p>
           </article>
           <article class="info-card">
-            <h3>Full curriculum coverage</h3>
-            <p>Study by unit across grades 1–6, organized into semester 1, semester 2, and comprehensive review.</p>
+            <span class="sem-feature-icon" aria-hidden="true">📚</span>
+            <h3>Grade-level practice</h3>
+            <p>Practice calculation-focused units from Korean elementary grades 1–6 by semester, then try comprehensive review.</p>
           </article>
           <article class="info-card">
-            <h3>Reasoning word problems</h3>
-            <p>Higher difficulty levels offer competition-style word problems that build reasoning skills.</p>
+            <span class="sem-feature-icon" aria-hidden="true">💡</span>
+            <h3>Step-by-step hints</h3>
+            <p>Get guidance when you're stuck. Watching an ad may be required for additional hints.</p>
           </article>
           <article class="info-card">
-            <h3>Review notebook and records</h3>
-            <p>Wrong-answer review and a calendar-style learning record support a repeat-learning routine.</p>
+            <span class="sem-feature-icon" aria-hidden="true">📝</span>
+            <h3>Review notebook</h3>
+            <p>Collect missed questions and solve them again. Correctly answered questions leave the review list.</p>
+          </article>
+          <article class="info-card">
+            <span class="sem-feature-icon" aria-hidden="true">📅</span>
+            <h3>Learning history</h3>
+            <p>See practice days in a calendar and inspect session results and individual answers.</p>
+          </article>
+          <article class="info-card">
+            <span class="sem-feature-icon" aria-hidden="true">🍬</span>
+            <h3>Jellies and customization</h3>
+            <p>Earn jellies through practice and use them to personalize ink colors, pens, and your scratch space.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="screenshots" class="section sem-screenshots">
+      <div class="section-inner">
+        <div class="section-heading compact">
+          <div>
+            <div class="eyebrow">App preview</div>
+            <h2>See the app in action</h2>
+          </div>
+        </div>
+        <div class="sem-screenshot-grid">
+          <figure><img src="../assets/sem-onestep/02.png" alt="Sem OneStep screen for selecting a semester unit" width="1080" height="1920" loading="lazy" /><figcaption>Choose a unit</figcaption></figure>
+          <figure><img src="../assets/sem-onestep/03.png" alt="Four difficulty choices within a unit" width="1080" height="1920" loading="lazy" /><figcaption>Find your level</figcaption></figure>
+          <figure><img src="../assets/sem-onestep/04.png" alt="Handwritten working and answer in a math quiz" width="1080" height="1920" loading="lazy" /><figcaption>Write your working</figcaption></figure>
+          <figure><img src="../assets/sem-onestep/05.png" alt="A challenging Korean math word problem" width="1080" height="1920" loading="lazy" /><figcaption>Think through word problems</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sem-download">
+      <div class="section-inner sem-download-inner">
+        <div>
+          <div class="eyebrow">Start learning</div>
+          <h2>Start with one problem today</h2>
+          <p>Sem OneStep is available on Android. App content is in Korean.</p>
+        </div>
+        <a class="btn btn-primary sem-primary-btn" href="https://play.google.com/store/apps/details?id=com.honaapp.math_quiz_app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a>
       </div>
     </section>
 
