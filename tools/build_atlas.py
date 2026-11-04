@@ -24,6 +24,13 @@ from PIL import Image
 
 SITE = Path(__file__).resolve().parents[1]
 BASE = 'https://yenalab.com'
+
+
+def clean(path):
+    """Cloudflare가 .html 주소를 확장자 없는 주소로 넘긴다(307). 대표 주소는 넘어간 뒤의 주소다."""
+    if path.endswith('index.html'):
+        return path[:-len('index.html')]
+    return path[:-5] if path.endswith('.html') else path
 ADS = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
        '?client=ca-pub-6576535388233153" crossorigin="anonymous"></script>')
 CONTINENTS = ['AS', 'EU', 'AF', 'NA', 'SA', 'OC']
@@ -169,11 +176,11 @@ class Page:
         self.other = '../en/atlas/' if lang == 'ko' else '../../atlas/'
 
     def url(self, name):
-        return f'{BASE}/atlas/{name}' if self.lang == 'ko' else f'{BASE}/en/atlas/{name}'
+        return clean(f'{BASE}/atlas/{name}' if self.lang == 'ko' else f'{BASE}/en/atlas/{name}')
 
     def head(self, name, title, desc, image=None):
         t = self.t
-        ko, en = f'{BASE}/atlas/{name}', f'{BASE}/en/atlas/{name}'
+        ko, en = clean(f'{BASE}/atlas/{name}'), clean(f'{BASE}/en/atlas/{name}')
         og = f'\n  <meta property="og:image" content="{BASE}/atlas/{image}" />' if image else ''
         return f'''<!DOCTYPE html>
 <html lang="{t['lang']}">
@@ -559,8 +566,8 @@ def build(args):
 
     # sitemap: 기존 허브 페이지 + 도감
     hub = sorted(p.name for p in SITE.glob('*.html'))
-    urls = [f'{BASE}/' if n == 'index.html' else f'{BASE}/{n}' for n in hub]
-    urls += [f'{BASE}/en/' if n == 'index.html' else f'{BASE}/en/{n}' for n in sorted(p.name for p in (SITE / 'en').glob('*.html'))]
+    urls = [clean(f'{BASE}/{n}') for n in hub]
+    urls += [clean(f'{BASE}/en/{n}') for n in sorted(p.name for p in (SITE / 'en').glob('*.html'))]
     today = date.today().isoformat()
     xml = ''.join(f'  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n' for u in urls + pages)
     (SITE / 'sitemap.xml').write_text(
