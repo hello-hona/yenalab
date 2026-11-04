@@ -1,0 +1,379 @@
+/* 여긴어디? 세계 지리 도감 (atlas/, en/atlas/) */
+
+.atlas-hero {
+  border-bottom: 1px solid var(--border-card);
+  padding-bottom: var(--space-10);
+}
+
+.crumbs {
+  margin: 0 0 var(--space-5);
+  font-size: var(--fs-xs);
+  color: var(--fg-3);
+}
+
+.crumbs a {
+  color: var(--fg-2);
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.atlas-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.atlas-title h1 {
+  margin: 0;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--letter-display);
+}
+
+.atlas-flag {
+  width: 96px;
+  height: auto;
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  flex: none;
+}
+
+.atlas-sub {
+  margin: var(--space-1) 0 0;
+  color: var(--fg-2);
+}
+
+.fact-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.fact-chips .chip b {
+  font-weight: var(--fw-bold);
+  margin-right: 4px;
+}
+
+.atlas-section h2 {
+  margin: 0 0 var(--space-5);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--letter-display);
+}
+
+.atlas-map {
+  margin: 0 0 var(--space-6);
+}
+
+.atlas-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  background: var(--bg-subtle);
+}
+
+.atlas-map figcaption {
+  margin-top: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--fg-3);
+}
+
+.atlas-easy {
+  margin: 0 0 var(--space-3);
+  font-size: 1.1rem;
+  font-weight: var(--fw-medium);
+}
+
+.atlas-summary {
+  margin: 0 0 var(--space-6);
+  color: var(--fg-2);
+}
+
+.topic {
+  margin-top: var(--space-8);
+}
+
+.topic h3,
+.region-block h3 {
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-h3);
+}
+
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.note-card {
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+}
+
+.note-card h3,
+.note-card h4 {
+  margin: 0 0 var(--space-2);
+  font-size: 1.02rem;
+}
+
+.note-card p {
+  margin: 0;
+  color: var(--fg-2);
+  font-size: var(--fs-sm);
+}
+
+.note-card .note-source {
+  margin-top: var(--space-3);
+  font-size: var(--fs-xs);
+  color: var(--fg-3);
+}
+
+.note-source a,
+.source-list a {
+  color: var(--fg-2);
+  text-underline-offset: 3px;
+}
+
+.art-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.art-card {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.art-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--bg-subtle);
+}
+
+.art-body {
+  padding: var(--space-5) var(--space-6);
+}
+
+.art-cat {
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--letter-eyebrow);
+  color: var(--fg-3);
+}
+
+.art-body h3 {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: var(--fs-h3);
+}
+
+.art-easy {
+  margin: 0 0 var(--space-3);
+  font-weight: var(--fw-medium);
+}
+
+.art-detail {
+  margin: 0;
+  color: var(--fg-2);
+  font-size: var(--fs-sm);
+}
+
+.source-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--fg-2);
+  font-size: var(--fs-sm);
+}
+
+.source-list li + li {
+  margin-top: var(--space-2);
+}
+
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.country-card {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  column-gap: var(--space-4);
+  row-gap: var(--space-1);
+  align-items: center;
+  padding: var(--space-4);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+}
+
+.country-card:hover {
+  background: var(--bg-subtle);
+}
+
+.country-card img {
+  grid-row: span 2;
+  width: 48px;
+  height: auto;
+  border: 1px solid var(--border-card);
+  border-radius: 4px;
+}
+
+.country-card-name {
+  font-weight: var(--fw-bold);
+}
+
+.country-card-hint {
+  font-size: var(--fs-xs);
+  color: var(--fg-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.group-title {
+  margin: var(--space-8) 0 var(--space-4);
+  font-size: var(--fs-h3);
+}
+
+.group-title:first-of-type {
+  margin-top: 0;
+}
+
+.continent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-5);
+}
+
+.continent-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+}
+
+.continent-card:hover {
+  background: var(--bg-subtle);
+}
+
+.continent-name {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+}
+
+.continent-headline {
+  font-weight: var(--fw-medium);
+}
+
+.continent-easy {
+  color: var(--fg-2);
+  font-size: var(--fs-sm);
+}
+
+.continent-count {
+  margin-top: auto;
+  font-size: var(--fs-xs);
+  color: var(--fg-3);
+}
+
+.region-block + .region-block {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border-card);
+}
+
+.region-headline {
+  margin: calc(-1 * var(--space-3)) 0 var(--space-4);
+  color: var(--fg-2);
+}
+
+.region-block .country-grid {
+  margin-top: var(--space-6);
+}
+
+.atlas-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 560px) {
+  .atlas-title {
+    align-items: start;
+  }
+
+  .atlas-flag {
+    width: 72px;
+  }
+
+  .art-card,
+  .country-grid,
+  .continent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.art-card img.art-svg {
+  object-fit: contain;
+  padding: 18% 12%;
+}
+
+/* 여긴어디? 앱 소개의 나라 목록 */
+.continent-list {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.continent-row h3 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-h3);
+}
+
+.continent-row h3 span {
+  margin-left: var(--space-1);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--fg-3);
+}
+
+.chip-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip-links a {
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: var(--fs-xs);
+  color: var(--fg-2);
+  text-decoration: none;
+}
+
+.chip-links a:hover {
+  background: var(--bg-subtle);
+  color: var(--fg-1);
+}

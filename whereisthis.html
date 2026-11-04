@@ -6,13 +6,14 @@
   <title>여긴어디? | 예나랩</title>
   <meta
     name="description"
-    content="세계지도에서 단서를 따라 나라를 발견하고, 국기와 수도 퀴즈로 복습하는 어린이 세계 지리 탐험 앱 여긴어디? 소개와 정책 안내."
+    content="그림 단서를 따라 37개 나라를 찾아가는 어린이 세계 지리 탐험 앱 여긴어디? 소개와 세계 지리 도감, 정책 안내."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="colors_and_type.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="atlas.css" />
   <link rel="alternate" hreflang="ko" href="https://yenalab.com/whereisthis.html" />
   <link rel="alternate" hreflang="en" href="https://yenalab.com/en/whereisthis.html" />
   <link rel="alternate" hreflang="x-default" href="https://yenalab.com/whereisthis.html" />
@@ -22,6 +23,7 @@
     <div class="nav-inner">
       <a class="nav-logo" href="index.html">예나랩</a>
       <ul class="nav-links">
+        <li><a href="atlas/index.html">도감</a></li>
         <li><a href="index.html#apps">앱</a></li>
         <li><a href="index.html#support">문의</a></li>
         <li><a class="nav-lang" href="en/whereisthis.html" hreflang="en" lang="en">🇺🇸 EN</a></li>
@@ -35,12 +37,12 @@
         <div class="eyebrow">Geography App</div>
         <h1>여긴어디?</h1>
         <p>
-          세계지도에서 지역을 고르고, 단서를 따라 숨어 있는 나라를 발견하는
-          어린이 세계 지리 탐험 앱입니다. 픽셀아트 도감과 그림 지도, 퀴즈와
-          국기 짝맞추기로 나라를 자연스럽게 다시 만나도록 구성했습니다.
+          그림 단서를 따라 숨어 있는 나라를 찾아가는 어린이 세계 지리 탐험 앱입니다. 세계지도에서 대륙과 지역을 고르고 단서를 보며 나라를 발견하면, 그 나라의 그림 지도와 픽셀아트 도감이 열립니다. 국기·수도 퀴즈와 국기 짝맞추기로 다시 복습할 수 있습니다.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#support">출시 문의</a>
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.yenalab.whereisthis" target="_blank" rel="noopener">Google Play에서 받기</a>
+          <a class="btn btn-secondary" href="https://whereisthis.yenalab.com" target="_blank" rel="noopener">웹에서 바로 하기</a>
+          <a class="btn btn-secondary" href="atlas/index.html">세계 지리 도감</a>
           <a class="btn btn-secondary" href="whereisthis-privacy.html">개인정보처리방침</a>
           <a class="btn btn-secondary" href="whereisthis-terms.html">이용약관</a>
         </div>
@@ -48,10 +50,9 @@
       <div class="hero-aside">
         <div class="glass-card stack-card">
           <span class="card-kicker">핵심 구조</span>
-          <strong>로그인 없음 · 로컬 저장 · 세계지도 탐험 · 퀴즈 복습</strong>
+          <strong>로그인 없음 · 기기 내 저장 · 한국어와 영어</strong>
           <p>
-            발견 기록, 퀴즈 기록, 설정은 기기 내부 저장소에 저장됩니다.
-            계정 가입이나 위치 권한 없이 시작할 수 있습니다.
+            발견 기록, 퀴즈 기록, 설정은 기기 내부 저장소에 저장됩니다. 계정 가입이나 위치 권한 없이 바로 시작할 수 있습니다.
           </p>
         </div>
         <div class="glass-card mini-grid">
@@ -64,12 +65,12 @@
             <span>지역</span>
           </div>
           <div>
-            <strong>30</strong>
+            <strong>37</strong>
             <span>탐험 국가</span>
           </div>
           <div>
-            <strong>3</strong>
-            <span>퀴즈 유형</span>
+            <strong>337</strong>
+            <span>도감 그림</span>
           </div>
         </div>
       </div>
@@ -87,20 +88,28 @@
         </div>
         <div class="feature-grid">
           <article class="info-card">
-            <h3>세계지도 탐험</h3>
-            <p>대륙과 지역을 따라 이동하며 아직 발견하지 못한 나라를 직접 찾아갑니다.</p>
+            <h3>그림 단서로 나라 찾기</h3>
+            <p>대륙과 지역을 따라 이동하며, 정답 대신 그림 단서와 위치 힌트를 보고 숨어 있는 나라를 찾아냅니다.</p>
           </article>
           <article class="info-card">
-            <h3>단서 기반 발견</h3>
-            <p>정답을 바로 보여주지 않고 위치와 국기 힌트를 보며 나라를 맞히는 흐름을 제공합니다.</p>
+            <h3>나라마다 그림 지도</h3>
+            <p>37개 나라 모두 산맥·평야·강·섬이 보이는 그림 지도가 있습니다. &quot;지도로 읽는 풍경&quot;에서 땅이 어떻게 만들어졌는지 출처와 함께 읽을 수 있습니다.</p>
           </article>
           <article class="info-card">
-            <h3>국기 · 수도 퀴즈</h3>
-            <p>국기에서 나라 이름 찾기, 나라 이름에서 국기 찾기, 수도 맞히기 문제로 복습합니다.</p>
+            <h3>9개 분야 픽셀아트 도감</h3>
+            <p>도시, 역사유산, 자연, 식물, 문화, 음식, 동물, 인사말, 국기를 나라마다 그림으로 담았습니다. 모두 337장이며 쉬운 설명과 자세한 설명이 함께 있습니다.</p>
           </article>
           <article class="info-card">
-            <h3>픽셀아트 도감과 그림 지도</h3>
-            <p>발견한 나라는 픽셀아트 도감과 그림 지도로 다시 확인하며 탐험 기록을 쌓을 수 있습니다.</p>
+            <h3>국기·수도 퀴즈와 국기 짝맞추기</h3>
+            <p>발견한 나라를 국기에서 나라 찾기, 나라에서 국기 찾기, 수도 맞히기, 국기 짝맞추기로 다시 만납니다.</p>
+          </article>
+          <article class="info-card">
+            <h3>여권 도장 모으기</h3>
+            <p>나라를 발견할 때마다 여권 도장이 쌓여 탐험 기록을 한눈에 볼 수 있습니다.</p>
+          </article>
+          <article class="info-card">
+            <h3>한국어와 영어</h3>
+            <p>한국어와 영어로 바로 시작하고, 설정에서 언제든 언어를 바꿀 수 있습니다.</p>
           </article>
           <article class="info-card">
             <h3>기기 내 저장</h3>
@@ -110,6 +119,87 @@
             <h3>어린이 대상 광고 설정</h3>
             <p>Android 광고는 어린이 대상 처리, 전체 이용가 광고 등급, 비개인화 광고 요청을 기준으로 설정합니다.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="countries" class="section">
+      <div class="section-inner">
+        <div class="section-heading compact">
+          <div>
+            <div class="eyebrow">Countries</div>
+            <h2>탐험할 수 있는 나라</h2>
+          </div>
+        </div>
+        <p class="atlas-summary">지금 앱에서 37개 나라를 만날 수 있습니다. 나라 이름을 누르면 세계 지리 도감에서 그 나라의 그림 지도와 도감을 웹으로 읽을 수 있습니다.</p>
+        <div class="continent-list">
+          <div class="continent-row">
+            <h3>아시아 <span>10</span></h3>
+            <div class="chip-links">
+            <a href="atlas/kr.html">대한민국</a>
+            <a href="atlas/jp.html">일본</a>
+            <a href="atlas/cn.html">중국</a>
+            <a href="atlas/mn.html">몽골</a>
+            <a href="atlas/vn.html">베트남</a>
+            <a href="atlas/th.html">태국</a>
+            <a href="atlas/id.html">인도네시아</a>
+            <a href="atlas/in.html">인도</a>
+            <a href="atlas/uz.html">우즈베키스탄</a>
+            <a href="atlas/sa.html">사우디아라비아</a>
+            </div>
+          </div>
+          <div class="continent-row">
+            <h3>유럽 <span>11</span></h3>
+            <div class="chip-links">
+            <a href="atlas/no.html">노르웨이</a>
+            <a href="atlas/se.html">스웨덴</a>
+            <a href="atlas/gb.html">영국</a>
+            <a href="atlas/fr.html">프랑스</a>
+            <a href="atlas/de.html">독일</a>
+            <a href="atlas/es.html">스페인</a>
+            <a href="atlas/it.html">이탈리아</a>
+            <a href="atlas/gr.html">그리스</a>
+            <a href="atlas/tr.html">튀르키예</a>
+            <a href="atlas/pl.html">폴란드</a>
+            <a href="atlas/hu.html">헝가리</a>
+            </div>
+          </div>
+          <div class="continent-row">
+            <h3>아프리카 <span>7</span></h3>
+            <div class="chip-links">
+            <a href="atlas/eg.html">이집트</a>
+            <a href="atlas/ma.html">모로코</a>
+            <a href="atlas/gh.html">가나</a>
+            <a href="atlas/ng.html">나이지리아</a>
+            <a href="atlas/cm.html">카메룬</a>
+            <a href="atlas/ke.html">케냐</a>
+            <a href="atlas/za.html">남아프리카공화국</a>
+            </div>
+          </div>
+          <div class="continent-row">
+            <h3>북아메리카 <span>5</span></h3>
+            <div class="chip-links">
+            <a href="atlas/ca.html">캐나다</a>
+            <a href="atlas/us.html">미국</a>
+            <a href="atlas/mx.html">멕시코</a>
+            <a href="atlas/cu.html">쿠바</a>
+            <a href="atlas/jm.html">자메이카</a>
+            </div>
+          </div>
+          <div class="continent-row">
+            <h3>남아메리카 <span>3</span></h3>
+            <div class="chip-links">
+            <a href="atlas/pe.html">페루</a>
+            <a href="atlas/br.html">브라질</a>
+            <a href="atlas/ar.html">아르헨티나</a>
+            </div>
+          </div>
+          <div class="continent-row">
+            <h3>오세아니아 <span>1</span></h3>
+            <div class="chip-links">
+            <a href="atlas/au.html">호주</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -138,7 +228,7 @@
           </div>
           <div class="support-row">
             <strong>문의 예시</strong>
-            <span>출시 일정, 지리 콘텐츠, 퀴즈 기록, 도감, 광고, 앱 동작 오류</span>
+            <span>지리 콘텐츠, 도감 내용 바로잡기, 퀴즈 기록, 광고, 앱 동작 오류</span>
           </div>
         </div>
       </div>
@@ -153,6 +243,7 @@
       </div>
       <div class="footer-links">
         <a href="index.html">예나랩 홈</a>
+        <a href="atlas/index.html">세계 지리 도감</a>
         <a href="whereisthis-privacy.html">개인정보처리방침</a>
         <a href="whereisthis-terms.html">이용약관</a>
       </div>

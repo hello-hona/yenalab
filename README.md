@@ -37,6 +37,13 @@
 └── en/                  # 영어 (한국어와 1:1 동일 구조)
 ```
 
+## 세계 지리 도감 (atlas)
+
+- `atlas/`(한국어)와 `en/atlas/`(영어)는 여긴어디? 앱의 활성 나라 콘텐츠(지도 설명, 픽셀아트 도감, 대륙·지역 설명)를 검색 로봇이 읽을 수 있는 HTML로 옮긴 것이다. 앱 웹판은 Flutter 캔버스라 글이 읽히지 않는다.
+- 직접 고치지 않는다. 앱 콘텐츠가 바뀌면 다시 만든다(Pillow 필요):
+  `python tools/build_atlas.py --src /mnt/c/hona/project/whereisthis` (그림까지 다시 만들 때 `--force`)
+- 그림은 `atlas/img/`(도감 448px, 지도 긴 변 1000px, WebP q72), 스타일은 `atlas.css`, 사이트맵은 `sitemap.xml`(스크립트가 허브 페이지까지 함께 적음).
+
 ## 다국어 (i18n)
 
 - **디렉터리 방식**: 한국어는 루트, 영어는 `/en/`. JS 런타임 번역 없음.
